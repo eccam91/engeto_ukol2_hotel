@@ -1,2 +1,7 @@
-package com.engeto.hotel;public class VacationType {
+package com.engeto.hotel;
+
+public enum VacationType {
+    RECREATIONAL,
+    WORK,
+    UNKNOWN
 }

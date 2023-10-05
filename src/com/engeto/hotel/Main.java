@@ -1,4 +1,4 @@
-import com.engeto.hotel.*;
+package com.engeto.hotel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -29,8 +29,8 @@ public class Main {
         Room room2 = new Room(2, 1, true, true, BigDecimal.valueOf(1000));
         Room room3 = new Room(3, 3, false, true, BigDecimal.valueOf(2400));
 
+
         System.out.println(room1.getRoomDescription());
-        System.out.println(room2.getRoomDescription());
         System.out.println(room3.getRoomDescription());
         System.out.println();
 
@@ -55,14 +55,14 @@ public class Main {
          */
 
         Booking booking3 = new Booking(room3, List.of(guestJan), LocalDate.of(2020, 9, 1), LocalDate.of(2020, 9, 14));
-        Booking booking4 = new Booking(room1, List.of(guestJan), LocalDate.of(2020, 9, 1), LocalDate.of(2020, 9, 14));
+        Booking booking4 = new Booking(room1, List.of(guestJan), LocalDate.of(2020, 8, 1), LocalDate.of(2020, 8, 14));
 
         /*
         Zkus přidat dvě různé rezervace na jeden pokoj v různá data.
          */
 
-        Booking booking5 = new Booking(room1, List.of(guestAlena), LocalDate.of(2022, 9, 1), LocalDate.of(2022, 9, 14));
-        Booking booking6 = new Booking(room1, List.of(guestAlena), LocalDate.of(2023, 9, 1), LocalDate.of(2023, 9, 14));
+        Booking booking5 = new Booking(room1, List.of(guestAlena), LocalDate.of(2022, 9, 1), LocalDate.of(2022, 9, 14), VacationType.WORK);
+        Booking booking6 = new Booking(room1, List.of(guestAlena), LocalDate.of(2020, 6, 11), LocalDate.of(2020, 7, 1), VacationType.RECREATIONAL);
 
 
         /*
