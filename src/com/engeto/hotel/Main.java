@@ -53,7 +53,7 @@ public class Main {
         Získání seznamu rezervací: getBookings().
          */
         System.out.println("Seznam rezervací:");
-        System.out.println(BookingManager.getBookings());
+        System.out.println(BookingManager.getBookingsAsText());
         System.out.println();
 
         /*
@@ -76,12 +76,12 @@ public class Main {
         Získání rezervace se zadaným indexem ze seznamu: getBooking(index).
          */
 
-        System.out.println("Vybraná rezervace: " + BookingManager.getBooking(1));
+        System.out.println("Vybraná rezervace: " + BookingManager.getBookingAsText(1));
 
         /*
         Do třídy Booking přidej metodu getBookingLength, která bude vracet počet nocí pro danou rezervaci.
          */
-        Booking selectedReservation = BookingManager.getBookingObject(1);
+        Booking selectedReservation = BookingManager.getBooking(1);
         System.out.println("Délka pobytu vybrané rezervace: " + selectedReservation.getBookingLength() + " dní.");
 
         /*
@@ -94,7 +94,7 @@ public class Main {
         Vymazání seznamu rezervací: clearBookings()
          */
         BookingManager.clearBookings();
-        System.out.println(BookingManager.getBookings());
+        System.out.println(BookingManager.getBookingsAsText());
 
     }
 
@@ -246,7 +246,7 @@ public class Main {
         Vypiš seznam všech rezervací
          */
 
-        System.out.println(BookingManager.getBookings());
+        System.out.println(BookingManager.getBookingsAsText());
         System.out.println();
 
         /*
@@ -270,7 +270,7 @@ public class Main {
 
         Booking booking7 = new Booking(room3, List.of(guestAlena, guestJan), VacationType.RECREATIONAL);
 
-        System.out.println(BookingManager.getBookings());
+        System.out.println(BookingManager.getBookingsAsText());
         System.out.println();
 
 

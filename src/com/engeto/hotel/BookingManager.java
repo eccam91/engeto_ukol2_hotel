@@ -10,25 +10,25 @@ public class BookingManager {
     public static void addBooking(Booking booking) {
         bookings.add(booking);
     }
-    public static String getBooking(int index) {
+    public static String getBookingAsText(int index) {
         if (index >= 1 && index < bookings.size()+1) {
             Booking booking = bookings.get(index-1);
             String guestNames = getGuestNames(booking.getGuests());
 
             return String.format("ID rezervace: %s, pokoj číslo: %s, host(é): %s, rezervace od: %s do: %s. typ pobytu: %s.%n",
-                    booking.getId(), booking.getRoomNumber(), guestNames, booking.getDateStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.getDateEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.vacationTypeToString());
+                    booking.getId(), booking.getRoomNumber(), guestNames, booking.getDateStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.getDateEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.getVacationType().toString());
         } else {
             return "Rezervace s tímto číslem neexistuje.";
         }
     }
-    public static String getBookings() {
+    public static String getBookingsAsText() {
         StringBuilder result = new StringBuilder();
 
         if (!bookings.isEmpty()) {
             for (Booking booking : bookings) {
                 String guestNames = getGuestNames(booking.getGuests());
                 result.append(String.format("ID rezervace: %s, pokoj číslo: %s, host(é): %s, rezervace od: %s do: %s. typ pobytu: %s.%n",
-                        booking.getId(), booking.getRoomNumber(), guestNames, booking.getDateStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.getDateEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.vacationTypeToString()));
+                        booking.getId(), booking.getRoomNumber(), guestNames, booking.getDateStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.getDateEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), booking.getVacationType().toString()));
             }
         } else {
             result.append("Žádné rezervace");
@@ -39,7 +39,7 @@ public class BookingManager {
     public static void clearBookings() {
         bookings.clear();
     }
-    public static Booking getBookingObject(int index) {
+    public static Booking getBooking(int index) {
         if (index >= 1 && index < bookings.size()+1) {
             Booking booking = bookings.get(index-1);
             return booking;

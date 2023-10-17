@@ -89,13 +89,4 @@ public class Booking {
         return type;
     }
 
-    public String vacationTypeToString() {
-        StringBuilder vacationType = new StringBuilder();
-        switch (this.type) {
-            case WORK -> vacationType.append("pracovní");
-            case RECREATIONAL -> vacationType.append("rekreační");
-            default -> vacationType.append("neuvedeno");
-        }
-        return vacationType.toString();
-    }
 }
